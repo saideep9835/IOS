@@ -98,7 +98,27 @@ var b:[Int] = [5,6,6,7,8]
 print(removeDup(a, b))
 
 
-
+func fST(_ a: [Int]) -> (Int,Int,Int){
+    var first = 0
+    var second = 0
+    var third = 0
+    for i in 0..<a.count{
+        if a[i] > first  {
+            
+            second = first
+            third = second
+            first = a[i]
+        }else if a[i] > second{
+            third = second
+            second = a[i]
+        }else if a[i] > third{
+            third = a[i]
+        }
+    }
+    return (first,second,third)
+}
+var a = [23,56,7,77,84,92,36,12,34,43]
+print(fST(a))
 
 
 
