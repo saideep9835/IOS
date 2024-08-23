@@ -123,6 +123,42 @@ func fST(_ a: [Int]) -> (Int, Int, Int) {
 var a = [23, 56, 7, 77, 84, 92, 36, 12, 34, 43]
 print(fST(a))
 
+unc commonChar(_ string: [String]) -> String{
+    var common: String = ""
+    let first: String = string[0]
+    for i in first{
+        var isCommon = true
+        for strs in string{
+            var found = false
+            for char in strs{
+                if i == char{
+                    
+                    found = true
+                    break
+                }
+            }
+            if !found{
+                isCommon = false
+                break
+            }
+            
+            
+        }
+        var isExisting = false
+        for existing in common{
+            if existing == i{
+                isExisting = true
+                break
+            }
+        }
+        if isCommon && !isExisting{
+            common.append(i)
+        }
+    }
+    return common
+}
+var strings = ["cool", "lock", "cook"]
+print(commonChar(strings))
 
 
 
